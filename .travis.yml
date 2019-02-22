@@ -10,17 +10,17 @@ script:
   - docker run spanas/docker-complex-udemy-test npm test -- --coverage
 
 after_success:
-  - docker build -t spanas/docker-complex-client ./client
-  - docker build -t spanas/docker-complex-nginx ./nginx
-  - docker build -t spanas/docker-complex-api ./server
-  - docker build -t spanas/docker-complex-worker ./worker
+  - docker build -t szympans/docker-complex-client ./client
+  - docker build -t szympans/docker-complex-nginx ./nginx
+  - docker build -t szympans/docker-complex-api ./server
+  - docker build -t szympans/docker-complex-worker ./worker
   #Log into docker CLI
   - echo "$docker-pass" | docker login -u "$docker-user" --password-stdin
   #Push to dockerhub
-  - docker push spanas/docker-complex-client
-  - docker push spanas/docker-complex-nginx
-  - docker push spanas/docker-complex-api
-  - docker push spanas/docker-complex-worker
+  - docker push szympans/docker-complex-client
+  - docker push szympans/docker-complex-nginx
+  - docker push szympans/docker-complex-api
+  - docker push szympans/docker-complex-worker
 
 
   
