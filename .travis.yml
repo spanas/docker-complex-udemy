@@ -15,7 +15,7 @@ after_success:
   - docker build -t szympans/docker-complex-api ./server
   - docker build -t szympans/docker-complex-worker ./worker
   #Log into docker CLI
-  - echo "$docker-pass" | docker login -u "$docker-user" --password-stdin
+  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
   #Push to dockerhub
   - docker push szympans/docker-complex-client
   - docker push szympans/docker-complex-nginx
