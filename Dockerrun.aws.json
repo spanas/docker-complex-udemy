@@ -1,6 +1,6 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "containersDefinitions": [
+  "containerDefinitions": [
     {
       "name": "client",
       "image": "szympans/docker-complex-client",
