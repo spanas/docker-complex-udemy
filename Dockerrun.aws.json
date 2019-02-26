@@ -1,0 +1,41 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containersDefinitions": [
+    {
+      "name": "client",
+      "image": "szympans/docker-complex-client",
+      "hostname": "client",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "worker",
+      "image": "szympans/docker-complex-worker",
+      "hostname": "client",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "api",
+      "image": "szympans/docker-complex-api",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
+    },
+    {
+      "name": "nginx",
+      "image": "szympans/docker-complex-nginx",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "api"]
+    }
+  ]
+
+}
+
